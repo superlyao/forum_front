@@ -6,6 +6,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import 'font-awesome/css/font-awesome.css'
+import './assets/css/public.css'
 
 /**
  * 设置项目使用的全局UI

@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <div style="margin: 15px 0 10px 20px;">
-      <el-input style="width: 200px;margin-bottom: 10px" size="small" placeholder="请输入内容" >
+      <el-input size="small" placeholder="请输入内容" >
         <el-button  slot="append" icon="search"></el-button>
       </el-input>
     </div>
@@ -38,11 +38,4 @@
     width: 40px;
     height: 40px;
   }
-  /*.nav-left{*/
-    /*display: inline;*/
-  /*}*/
-  /*.el-input{*/
-    /*width: 200px;*/
-    /*display: inline;*/
-  /*}*/
 </style>

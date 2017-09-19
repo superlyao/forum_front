@@ -46,6 +46,13 @@ body {
   height: 30px;
   font-size: 12px;
 }
+/*input长度*/
+.el-input-group {
+  line-height: normal;
+  display: inline-table;
+  width: 200px;
+  border-collapse: separate
+}
 .el-textarea__inner{
   font-size: 12px;
 }

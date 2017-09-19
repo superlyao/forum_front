@@ -5,9 +5,16 @@
         <img class="nav-img" src="../../assets/logo.png">
       </router-link>
     </div>
-    <el-input class="el-input" size="small" placeholder="请输入内容" >
-      <el-button  slot="append" icon="search"></el-button>
-    </el-input>
+    <div style="margin: 15px 0 10px 20px;">
+      <el-input style="width: 200px;margin-bottom: 10px" size="small" placeholder="请输入内容" >
+        <el-button  slot="append" icon="search"></el-button>
+      </el-input>
+    </div>
+    <div style="margin: 15px 0 15px 650px;">
+      <el-button>登录</el-button>
+      <el-button>注册</el-button>
+    </div>
+    <div ></div>
   </header>
 </template>
 <script>
@@ -23,10 +30,11 @@
   .header {
     padding: 0;
     background-color: burlywood;
-    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
   }
   .nav-img {
-    margin: 5px 0 0 220px;
+    margin: 10px 0 0 220px;
     width: 40px;
     height: 40px;
   }

@@ -11,18 +11,28 @@
       </el-input>
     </div>
     <div style="margin: 15px 0 15px 650px;">
-      <el-button>登录</el-button>
+      <el-button @click="signInMethod">登录</el-button>
       <el-button>注册</el-button>
     </div>
-    <div ></div>
+    <SignIn :signInDialog="signInDialog"></SignIn>
   </header>
 </template>
 <script>
-  import ElButton from '../../../node_modules/element-ui/packages/button/src/button'
+  import SignIn from '../common/signIn/SignIn.vue'
+  let initSignInDialog = {
+    isVisible: false
+  }
   export default {
-    components: {ElButton},
+    components: {SignIn},
     data () {
-      return {}
+      return {
+        signInDialog: Object.assign({}, initSignInDialog)
+      }
+    },
+    methods: {
+      signInMethod () {
+        this.signInDialog.isVisible = true
+      }
     }
   }
 </script>

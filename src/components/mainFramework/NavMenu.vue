@@ -12,7 +12,7 @@
     </div>
     <div style="margin: 15px 0 15px 650px;">
       <el-button @click="signInMethod">登录</el-button>
-      <el-button>注册</el-button>
+      <el-button @mouseenter="buttonHover">注册</el-button>
     </div>
     <SignIn :signInDialog="signInDialog"></SignIn>
   </header>
@@ -32,6 +32,9 @@
     methods: {
       signInMethod () {
         this.signInDialog.isVisible = true
+      },
+      buttonHover () {
+        console.log('1')
       }
     }
   }

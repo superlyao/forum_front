@@ -143,7 +143,7 @@ tr, th, td {
 .el-dialog__header {
   background-color: #eeeeee;
   line-height: 40px;
-  padding: 0 20px 0 20px;
+  padding: 6px 20px 0 20px;
   border-radius: 5px 5px 0 0;
 }
 .el-submenu__title{

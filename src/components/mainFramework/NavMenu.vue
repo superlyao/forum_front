@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <div style="margin: 15px 0 10px 20px;">
-      <el-input size="small" placeholder="请输入内容" >
+      <el-input  placeholder="请输入内容" >
         <el-button  slot="append" icon="search"></el-button>
       </el-input>
     </div>

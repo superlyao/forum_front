@@ -1,9 +1,3 @@
-/**
-* Created by xzc on 2017年2月8日
-* 描述:公共样式库,如果模块中存在特殊样式，请添加在对应模块的scoped域下
-*/
-
-/*页面背景，及默认字体类型*/
 body {
   margin: 0;
   padding: 0;
@@ -11,63 +5,136 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
-  background-color: #ebeded;
-
+  background-color: #f5f5f5;
 }
 
-/*全局设置遮罩层的颜色*/
-.el-loading-mask {
-  background-color: rgba(000, 000, 000, .3);
+html, body {
+  width: 100%;
+  height: 100%;
 }
 
-.el-loading-spinner .el-loading-text {
-  color: #ffffff;
+body {
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-/*菜单*/
-.el-menu-item-group .el-menu-item-group__title {
-  padding-left: 10px !important;
-  padding-top: 0 !important;
+
+@media (max-width: 768px) {
+  body {
+    font-size: 8px;
+  }
 }
-.el-menu-item-group .el-menu-item {
-  padding-left: 15px !important;
+
+.success {
+  color: #13CE66;
 }
-/*导航栏颜色*/
-.el-menu--dark {
-  background-color: #0099cc;
-  position: static;
-  float: left;
+
+.waring {
+  color: #F7BA2A;
 }
-/******************输入框，日期，下拉款样式************************/
-.el-textarea{
-  width: 193px;
+
+.danger {
+  color: #FF4949;
 }
+
+/*内容靠左*/
+.text-left {
+  text-align: left;
+}
+
+/*内容靠右*/
+.text-right {
+  text-align: right;
+}
+
 /*input框高度*/
 .el-input__inner {
   height: 30px;
   font-size: 12px;
 }
-/*input长度*/
-.el-input-group {
-  line-height: normal;
-  display: inline-table;
-  width: 200px;
-  border-collapse: separate
+
+.el-input {
+  width: 140px;
 }
-.el-textarea__inner{
-  font-size: 12px;
+
+/**单独日期**/
+.el-date-editor--date {
+  width: 160px !important;
 }
-.el-select{
-  width: 193px;
+
+/**时间范围**/
+.el-date-editor--daterange {
+  width: 200px !important;
 }
+/**单独精确到月日期**/
+.el-date-editor--month {
+  width: 160px !important;
+}
+
 /*lable的宽度*/
 .el-form-item__label {
-  float: left;
-  width: 120px;
+  width: 110px !important;
   text-align: right;
 }
-/*****************************按钮样式*******************************/
+
+.button-box {
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+tr, th, td {
+  text-align: center !important;
+}
+
+/*右对齐*/
+.text-right {
+  text-align: right;
+}
+
+/*大写*/
+.uppercase input {
+  text-transform: uppercase;
+}
+
+/*input的宽度*/
+.el-input {
+  width: 160px;
+}
+
+/*导航栏颜色*/
+.el-menu--dark {
+  background-color: #205081;
+  position: static;
+  float: left;
+}
+
+.button-left {
+  margin-left: 8em;
+}
+
+/**按钮样式*/
 .button-span {
   margin-left: 8px;
+}
+
+/*表头颜色*/
+.el-table__fixed-header-wrapper thead div, .el-table__header-wrapper thead div {
+  background-color: #ebeded;
+}
+
+.el-table th{
+  background-color: #ebeded;
+}
+/*菜单*/
+.el-menu-item-group .el-menu-item-group__title{
+  padding-left: 10px !important;
+  padding-top: 0 !important;
+}
+.el-menu-item-group .el-menu-item{
+  padding-left: 15px !important;
+}
+.real-name-table .cell, .real-name-table th > div {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 /*****************************新建页面样式*******************************/
 .el-dialog {
@@ -79,79 +146,10 @@ body {
   padding: 0 20px 0 20px;
   border-radius: 5px 5px 0 0;
 }
-/*大写*/
-.uppercase input, textarea {
-  text-transform: uppercase;
+.el-submenu__title{
+  font-weight: 600;
+  color: rgb(255, 255, 255) !important;
 }
-
-/*内容靠左*/
-.text-left {
-  text-align: left;
-}
-
-/*内容靠右*/
-.text-right {
-  text-align: right;
-  margin-right: 30px;
-}
-
-/*必填标识*/
-.label-is-required {
-  content: '*';
-  color: #ff4949;
-  margin-right: 4px;
-}
-
-/****************************表格样式***************************/
-tr, th, td {
-  text-align: center;
-}
-
-.el-table th > .cell {
-  text-align: center;
-}
-.el-tabs__nav {
-  float: none;
-}
-
-.el-tabs__nav-wrap {
-  overflow: visible;
-  margin-bottom: 0px;
-}
-
-.el-tabs__item {
-  width: 16%;
-  border-radius: 13px 13px 0 0 !important;
-}
-.el-tabs--card .el-tabs__nav .el-tabs__item.is-active {
-  border: 0px;
-  background: #0D67A9;
-  width: 16%;
-  border-radius: 13px 13px 0 0 !important;
-}
-.el-tabs__header {
-  margin: 0px;
-  border-bottom: 0px;
-  margin-top: 5px;
-  height: 30px;
-}
-/*表头颜色*/
-.el-table__fixed-header-wrapper thead div, .el-table__header-wrapper thead div {
-  background-color: #ebeded;
-}
-.el-table th {
-  background-color: #ebeded;
-}
-/*设置table内边距*/
-.el-table .cell, .el-table th > div {
-  padding: 0 2px;
-}
-/*提示信息字体样式*/
-.el-form-item__error{
-  width: 120%;
-}
-/*面包屑*/
-.el-breadcrumb{
-  line-height: 40px;
-  margin-left:40px;
+.el-menu--horizontal .el-submenu .el-submenu__icon-arrow{
+  color: rgb(255, 255, 255) !important;
 }

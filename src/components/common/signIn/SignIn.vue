@@ -32,10 +32,4 @@
   }
 </script>
 <style scoped>
-  .el-input {
-    position: relative;
-    font-size: 14px;
-    display: inline-block;
-    width: 200px
-  }
 </style>

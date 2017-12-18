@@ -16,7 +16,7 @@
 </script>
 <style>
   .page-padding {
-    padding: 0 3%;
+    padding: 1% 3%;
   }
 
   @media (max-width: 992px) {

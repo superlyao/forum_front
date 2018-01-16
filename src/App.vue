@@ -1,20 +1,23 @@
 <template>
-  <div style="margin: 0">
-    <NavMenu></NavMenu>
-    <Container></Container>
-    <FooterPage></FooterPage>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <router-view/>
   </div>
 </template>
 
 <script>
-  import NavMenu from './components/mainFramework/NavMenu.vue'
-  import Container from './components/mainFramework/Container.vue'
-  import FooterPage from './components/mainFramework/Footer.vue'
-  export default {
-    components: {NavMenu, Container, FooterPage}
-  }
+export default {
+  name: 'App'
+}
 </script>
 
 <style>
-
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>

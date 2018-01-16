@@ -13,6 +13,9 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
+const fs = require('fs')
+const mockDir = path.resolve(__dirname, '../mock')
+
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
@@ -42,6 +45,24 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
+    },
+    before (app) {
+      (function mockProxy (mockDir) {
+        fs.readdirSync(mockDir).forEach(function (file) {
+          if (file !== 'utils.js' && file.indexOf('.json') < 1) {
+            let filePath = path.resolve(mockDir, file)
+            if (fs.statSync(filePath).isDirectory()) {
+              mockProxy(filePath)
+            }
+            else {
+              let mock = require(filePath)
+              app.use(mock.api, function (req, res) {
+                mock.response(req, res, fs)
+              })
+            }
+          }
+        })
+      })(mockDir)
     }
   },
   plugins: [

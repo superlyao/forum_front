@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <HeaderMenu></HeaderMenu>
+    <Container></Container>
   </div>
 </template>
 
 <script>
+  import HeaderMenu from './model/mainFrame/HeaderMenu.vue'
+  import Container from './model/mainFrame/Container.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {HeaderMenu, Container}
 }
 </script>
 
@@ -18,6 +21,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

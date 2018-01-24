@@ -7,6 +7,6 @@ export const initRegisterParam = () => {
     passWord: '',
     email: '',
     file: '',
-    sex: 0
+    sex: '0'
   }
 }

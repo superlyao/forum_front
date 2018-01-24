@@ -2,3 +2,4 @@
 /config/*.js
 /dist/*.js
 /*.js
+src/http/httpResource.js

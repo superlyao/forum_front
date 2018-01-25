@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="注册" :visible.sync="isVisible">
+  <el-dialog title="注册" :visible.sync="registerFrom.isVisible">
     <el-form label-width="80px" v-model="registerParam">
       <el-form-item label="用户头像">
         <input type="file" name="file" @change="getFile($event)"/>
@@ -22,7 +22,7 @@
     </el-form>
     <div class="text-right">
       <el-button @click="submitMethod()" type="primary">确定</el-button>
-      <el-button @click="isVisible = false">取消</el-button>
+      <el-button @click="registerFrom.isVisible = false">取消</el-button>
     </div>
   </el-dialog>
 </template>
@@ -30,7 +30,7 @@
   import {initRegisterParam} from './register'
   import {registerUser} from '../../../http/requestApi'
   export default {
-    props: ['isVisible'],
+    props: ['registerFrom'],
     components: {},
     data() {
       return {
@@ -58,8 +58,11 @@
           headers:{'Content-Type':'multipart/form-data'}
         }
         console.log(this.registerParam)
-        this.$http.post(registerUser, this.formData, config)
-        this.isVisible = false
+
+        this.$http.post(registerUser, this.formData, config).then(res => {
+          let result = res.data
+          this.registerFrom.isVisible = false
+        })
       }
     }
   }

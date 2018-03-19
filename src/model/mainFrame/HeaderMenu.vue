@@ -5,24 +5,34 @@
       <el-button slot="append" icon="el-icon-search"></el-button>
     </el-input>
     <div class="header_button">
-      <el-button type="primary" size="medium" round>登录</el-button>
+      <el-button type="primary" size="medium"  @click="login" round>登录</el-button>
       <el-button size="medium" @click="register" round>注册</el-button>
     </div>
-    <register v-if="isVisible" :isVisible="isVisible"></register>
+    <register :registerObj="registerObj"></register>
+    <Login :loginObj="loginObj"></Login>
   </header>
 </template>
 <script>
-  import Register from '../view/user/Register.vue'
+  import Register from '../view/user/register/Register.vue'
+  import Login  from  '../view/user/login/Login.vue'
   export default {
-    components: {Register},
+    components: {Register, Login},
     data() {
       return {
-        isVisible: false
+        registerObj: {
+          isVisible: false
+        },
+        loginObj: {
+          isVisible: false
+        }
       }
     },
     methods: {
       register () {
-        this.isVisible = true
+        this.registerObj.isVisible = true
+      },
+      login() {
+        this.loginObj.isVisible = true
       }
     }
   }

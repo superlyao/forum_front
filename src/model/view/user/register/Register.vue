@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="注册" :visible.sync="isVisible">
+  <el-dialog title="注册" :visible.sync="registerObj.isVisible">
     <el-form label-width="80px" v-model="registerParam">
       <el-form-item label="用户头像">
         <input type="file" name="file" @change="getFile($event)"/>
@@ -22,15 +22,15 @@
     </el-form>
     <div class="text-right">
       <el-button @click="submitMethod()" type="primary">确定</el-button>
-      <el-button @click="isVisible = false">取消</el-button>
+      <el-button @click="registerObj.isVisible = false">取消</el-button>
     </div>
   </el-dialog>
 </template>
 <script>
-  import {initRegisterParam} from './register'
-  import {registerUser} from '../../../http/requestApi'
+  import {initRegisterParam} from './Register'
+  import {registerUser} from '../../../../http/requestApi'
   export default {
-    props: ['isVisible'],
+    props: ['registerObj'],
     components: {},
     data() {
       return {
